@@ -5,16 +5,22 @@ body {
     margin: 0;
 }
 
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+    z-index: 1;
 }
 
 .header__logo {
     height: 30px;
 }
+
 
 a {
     text-decoration: none;
@@ -53,6 +59,8 @@ button:hover {
 .about__sun-image {
     width: 100px;
     height: 100px;
+    animation: rotation 10s infinite linear;
+    position: absolute;
 }
 
 .about {
@@ -186,4 +194,80 @@ footer {
 
 .footer__links a {
     margin-bottom: 15px;
+}
+
+@keyframes rotation {
+  25% {transform: rotate(90deg);}
+  50% {transform: rotate(180deg);}
+  75% {transform: rotate(270deg);}
+  100% {transform: rotate(360deg);}
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .about {
+      padding: 115px 20px;
+  }
+
+  .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+
+  .about__image {
+      width: 280px;
+  }
+
+  .about__sun-image {
+      width: 75px;
+      height: 75px;
+  }
+}
+
+@media (max-width: 720px) {
+  header {
+    padding: 0 10px;
+  }
+  .header__logo {
+    height: 20px;
+  }
+
+  header a {
+    margin-right: 10px;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+    padding: 50px 10px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about__image {
+    width: 280px;
+  }
+
+  .about__sun-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .form {
+    padding: 50px 10px;
+  }
+
+  .form h1 {
+    font-size: 36px;
+  }
+
+  footer {
+    padding: 50px 10px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+  }
 }
